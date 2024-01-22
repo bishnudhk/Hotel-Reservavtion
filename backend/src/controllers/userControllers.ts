@@ -1,1 +1,1 @@
-export const getAllUsers = () => {};
+export const getAllUsers = async (req: Request, res: Response) => {};
