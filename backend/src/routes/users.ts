@@ -58,7 +58,7 @@ router.post(
         maxAge: 86400000, //milli second
       });
 
-      return res.sendStatus(200);
+      return res.status(200).send({ message: "USer registerd OK" });
     } catch (error) {
       console.error("Error in user registration:", error);
       res.status(500).send({ message: "something went wrong " });
