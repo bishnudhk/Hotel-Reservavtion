@@ -1,0 +1,9 @@
+.toastNotification {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tostMessage {
+  text-align: center;
+  font-size: 15px;
+}

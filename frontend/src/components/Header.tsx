@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
+import "./styles/header.css";
 
 const Header = () => {
   return (
-    <div className="bg-blue-800 py-6">
-      <div className="container mx-auto flex justify-between">
-        <span className="text-3xl text-white font-bold tracking-tight">
+    <div className="header">
+      <div className="headerBody">
+        <span className="headerLogo">
           <Link to="/">Hotel reservation</Link>
         </span>
         <span className="signin">
