@@ -1,4 +1,4 @@
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -17,14 +17,11 @@
   justify-content: space-between;
   text-align: center;
   margin: 50px;
-  /* margin: 12px 20px; */
 }
 .headerLogo {
-  /* width: 334px; */
   font-size: 30px;
 }
 .signin {
-  /* background-color: aqua; */
   margin-right: 120px;
 
   padding: 18px 50px;
@@ -34,7 +31,45 @@
 .signin :hover {
   border-radius: 30px;
   border: 1px solid black;
-  /* border-radius: 8px; */
+
   padding: 10px 18px;
   background-color: aqua;
+} */
+
+/* header.css */
+
+.header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+}
+
+.headerBody {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.headerLogo {
+  font-size: 1.5rem;
+}
+
+.headerLogo a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.signin {
+  font-size: 1rem;
+}
+
+.signin a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.signin a:hover {
+  text-decoration: underline;
 }

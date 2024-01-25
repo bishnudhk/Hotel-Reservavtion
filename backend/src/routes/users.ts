@@ -49,13 +49,14 @@ router.post(
 
       // const token = jwt.sign({ userId: user.id }, secretKey, { expiresIn: "1d" });
       const token = jwt.sign({ userId: user.id }, secretKey, {
-        expiresIn: "1d",
+        expiresIn: "365d",
       });
 
       res.cookie("auth_token", token, {
         httpOnly: true,
         secure: process.env.NODE_ENV === "production",
-        maxAge: 86400000, //milli second
+        // maxAge: 86400000, //milli second
+        maxAge: 365 * 24 * 60 * 60 * 1000,
       });
 
       return res.status(200).send({ message: "USer registerd OK" });

@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import "./styles/header.css";
+import { useAppContext } from "../context/AppContext";
 
 const Header = () => {
+  const { isLoggedIn } = useAppContext();
   return (
     <div className="header">
       <div className="headerBody">
@@ -9,9 +11,21 @@ const Header = () => {
           <Link to="/">Hotel reservation</Link>
         </span>
         <span className="signin">
-          <Link to="/signIn" className="signIn">
-            Sign In
-          </Link>
+          {isLoggedIn ? (
+            <>
+              <Link to="/my-bookings" className="myBooking">
+                My Bookings
+              </Link>
+              <Link to="/my-hotels" className="myHotels">
+                My Hotels
+              </Link>
+              <button className="btn signOut">Sign Out</button>
+            </>
+          ) : (
+            <Link to="/signIn" className="signIn">
+              Sign In
+            </Link>
+          )}
         </span>
       </div>
     </div>

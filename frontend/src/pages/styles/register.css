@@ -1,71 +1,59 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
+/* register.css */
+
 .form {
-  background-color: antiquewhite;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  width: 54%;
-  margin-left: 260px;
-  border-radius: 25px;
-
-  /* width: 90%; */
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
 .formHeading {
-  font-size: 23px;
-  font-weight: bold;
-  margin-bottom: 30px;
-}
-.formsName {
-  /* width: 90%; */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.formsName label {
-  font-size: 20px;
-  margin-bottom: 30px;
-  /* display: flex; */
-  flex-direction: column;
-  /* justify-content: center; */
-  /* text-align: center; */
-}
-.formInput {
-  margin-left: 22px;
-  width: 400px;
-  background-color: antiquewhite;
-  border: 1px solid black;
-  border-radius: 5px;
-  /* text-align: center;
-  align-items: center; */
-}
-.formError {
-  display: flex;
-  flex-direction: column;
-  color: red;
-  margin-left: 153px;
-  align-items: center;
   text-align: center;
-  justify-content: center;
-  font-size: 12px;
+  margin-bottom: 20px;
 }
 
-.button .btn {
-  font-weight: 500;
-  margin-bottom: 123px;
+.formsName {
+  display: flex;
+  flex-direction: column;
 }
-.button .btn {
-  background-color: green;
-  border-radius: 15px;
-  padding: 16px 25px;
-  text-decoration: none;
+
+.formName {
+  margin-bottom: 15px;
 }
+
+.formInput {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.formError {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.button {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.btn {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  /* border: none; */
+  border: 1px solid #161313;
+  border-radius: 4px;
+  cursor: pointer;
+  color: black;
+}
+
 .btn:hover {
-  background-color: antiquewhite;
+  background-color: #0056b3;
+  color: white;
 }
