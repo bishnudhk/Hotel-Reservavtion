@@ -45,9 +45,6 @@ router.post(
       user = new User(req.body);
       await user.save();
       const secretKey = process.env.JWT_SECRET_KEY || "defaultSecretKey";
-      // const token = jwt.sign({ userId: user.id }, secretKey, { expiresIn: "1d" });
-
-      // const token = jwt.sign({ userId: user.id }, secretKey, { expiresIn: "1d" });
       const token = jwt.sign({ userId: user.id }, secretKey, {
         expiresIn: "365d",
       });
