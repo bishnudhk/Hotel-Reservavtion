@@ -1,0 +1,163 @@
+/* Global Styles */
+body {
+  font-family: "Arial", sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Styles for DetailsSection */
+.formHeading {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.formsName,
+.cityName,
+.formName {
+  margin-bottom: 15px;
+}
+
+.formInput {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.formError {
+  color: red;
+  font-size: 14px;
+}
+
+/* Styles for TypeSection */
+/* ../formsCss/addForms.css */
+
+/* TypeSection Styles */
+.hotelTypesSection {
+  margin: 20px 0;
+}
+
+.hotelTypeHeading {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.hotelType {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.hotelType label {
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.hotelType label:hover {
+  background-color: #e0e0e0;
+}
+
+/* FacilitiesSection Styles */
+.facilitiesSections {
+  margin: 20px 0;
+}
+
+.facilitiesHeading {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.facilities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.facilities label {
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.facilities label:hover {
+  background-color: #e0e0e0;
+}
+
+/* Add more styles as needed */
+
+/* Styles for ImagesSection */
+.imageHeading {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.images input {
+  margin-top: 10px;
+}
+
+/* ../formsCss/addForms.css */
+
+/* GuestSection Styles */
+.guestSections {
+  margin: 10px 0;
+}
+
+.guestHeading {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.guestSection {
+  display: flex;
+  margin-top: 10px;
+}
+
+.guestSection label {
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.guestSection input {
+  margin-left: 5px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.guestSection input:hover,
+.guestSection input:focus {
+  border-color: #5a67d8;
+  outline: none;
+}
+
+.guestSection span {
+  color: #ff0000; /* Red color for error message */
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+/* Add more styles as needed */
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  .formInput {
+    width: calc(100% - 20px);
+  }
+}
