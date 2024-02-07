@@ -29,17 +29,18 @@ router.post(
     body("country").notEmpty().withMessage("Country is required"),
     body("description").notEmpty().withMessage("Description is required"),
     body("type").notEmpty().withMessage("Hotel type is required"),
-    body("priceperNight")
+    body("pricePerNight")
       .notEmpty()
       .isNumeric()
       .withMessage("Price per night is required and must be a number"),
     body("facilities")
       .notEmpty()
       .isArray()
-      .withMessage("facilities is required"),
+      .withMessage("Facilities are required"),
   ],
   upload.array("imageFiles", 6),
   async (req: Request, res: Response) => {
+    // console.log(req);
     try {
       const imageFiles = req.files as Express.Multer.File[];
       const newHotel: HotelType = req.body;
@@ -51,8 +52,10 @@ router.post(
         //   look image is jpg or png
         let dataURI = "data:" + image.mimetype + ";base64," + b64;
         const res = await cloudinary.v2.uploader.upload(dataURI);
+        // console.log(res);
         return res.url;
       });
+      // console.log(uplaodPromises);
 
       // 2) if upload was successful , add the urls to the new hotel
       const imageUrls = await Promise.all(uplaodPromises);
@@ -60,6 +63,7 @@ router.post(
       newHotel.lastUpdated = new Date();
       newHotel.userId = req.userId;
 
+      // console.log(newHotel);
       // 3 save the new hotel in our database
       const hotel = new Hotel(newHotel);
       await hotel.save();

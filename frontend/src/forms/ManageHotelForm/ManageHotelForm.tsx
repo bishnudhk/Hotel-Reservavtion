@@ -31,7 +31,7 @@ const ManageHotelForm = ({ onSave, isLoading }: Props) => {
   const formMethods = useForm<HotelFormData>();
   const { handleSubmit } = formMethods;
 
-  const onSubmit = handleSubmit((formDataJson: HotelFormData) => {
+  const onSubmit = handleSubmit(async (formDataJson: HotelFormData) => {
     // create new FormData objects and call our api
     // console.log(formDataJson);
     const formData = new FormData();
@@ -40,23 +40,21 @@ const ManageHotelForm = ({ onSave, isLoading }: Props) => {
     formData.append("country", formDataJson.country);
     formData.append("description", formDataJson.description);
     formData.append("type", formDataJson.type);
-    formData.append("priceperNight", formDataJson.pricePerNight.toString());
+    formData.append("pricePerNight", formDataJson.pricePerNight.toString());
     formData.append("starRating", formDataJson.starRating.toString());
     formData.append("adultCount", formDataJson.adultCount.toString());
     formData.append("childCount", formDataJson.childCount.toString());
 
     formDataJson.facilities.forEach((facility, index) => {
-      // console.log(index);
       formData.append(`facilities[${index}]`, facility);
     });
 
-    // Array.from(formDataJson.imageFiles).forEach((imageFile) => {
-    //   console.log(imageFile);
-    //   formData.append(`imageFiles`, imageFile);
-    // });
-    Array.from(formDataJson.imageFiles).forEach((imageFile) => {
+    // Assuming formDataJson is of type HotelFormData
+    Array.from(formDataJson.imageFiles || []).forEach((imageFile) => {
       formData.append(`imageFiles`, imageFile);
+      // console.log(formDataJson);
     });
+
     onSave(formData);
   });
 

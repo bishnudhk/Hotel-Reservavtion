@@ -77,14 +77,31 @@ export const signOut = async () => {
 };
 
 export const addMyHotel = async (hotelFormData: FormData) => {
-  const response = await fetch(`http://127.0.0.1:7000/api/myHotels`, {
-    credentials: "include",
-    method: "POST",
-    body: hotelFormData,
-  });
-  console.log(hotelFormData);
-  if (!response.ok) {
-    throw new Error("failed to add Hotel");
+  // console.log(hotelFormData);
+  try {
+    const response = await fetch(`http://127.0.0.1:7000/api/myHotels`, {
+      credentials: "include",
+      method: "POST",
+      body: hotelFormData,
+    });
+
+    // console.log(FormData);
+    // console.log(hotelFormData);
+    if (!response.ok) {
+      throw new Error("failed to add Hotel");
+    }
+
+    // Check for success status or handle accordingly
+    if (response.status === 200) {
+      // Handle success
+      console.log("Hotel added successfully");
+    } else {
+      // Handle unexpected status
+      console.error("Unexpected status:", response.status);
+    }
+  } catch (error) {
+    // Handle API request error
+    console.error("Error adding hotel:", error);
   }
-  return response.json();
+  // return response.json();
 };

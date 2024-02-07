@@ -18,8 +18,10 @@ const AddHotel = () => {
   });
 
   const handleSave = (hotelFormData: FormData) => {
+    // console.log(hotelFormData);
     mutate(hotelFormData);
   };
+
   return (
     <div>
       <ManageHotelForm onSave={handleSave} isLoading={isLoading} />
