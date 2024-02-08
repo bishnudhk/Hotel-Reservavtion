@@ -31,6 +31,10 @@ app.use(
 // this will give same url as frontend and backend
 // app.use(express.static(path.join(__dirname, "../../frontend/dist")));
 
+// app.get("*", (req: Request, res: Response) => {
+// res.sendFile(path.join(__dirname, "../../frontend/dist/index.html"))
+// })
+
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/myHotels", myHotelRoutes);

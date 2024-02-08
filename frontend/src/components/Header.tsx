@@ -14,10 +14,10 @@ const Header = () => {
         <span className="signin">
           {isLoggedIn ? (
             <>
-              <Link to="/my-bookings" className="myBooking">
+              <Link to="/myBookings" className="myBooking">
                 My Bookings
               </Link>
-              <Link to="/my-hotels" className="myHotels">
+              <Link to="/myHotels" className="myHotels">
                 My Hotels
               </Link>
               <SignOutButton />

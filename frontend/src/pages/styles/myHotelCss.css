@@ -1,0 +1,79 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.myHotelsMain {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.myHotelsHeading {
+  font-size: 24px;
+  margin: 0;
+}
+
+.linkAddHotel {
+  padding: 10px 15px;
+  background-color: #3498db;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.linkAddHotel:hover {
+  background-color: #2980b9;
+}
+
+.myHotelLists {
+  display: grid;
+  gap: 20px;
+}
+
+.myHotellist {
+  background-color: #ecf0f1;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.hotelName {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.hotelDescp {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.hotelListDetails {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.hotelDetail {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  font-size: 14px;
+  color: #333;
+}
+
+.viewDetails a {
+  padding: 8px 12px;
+  background-color: #2ecc71;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+.viewDetails a:hover {
+  background-color: #27ae60;
+}
