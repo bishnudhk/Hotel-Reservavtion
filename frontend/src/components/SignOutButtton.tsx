@@ -1,6 +1,8 @@
 import { useMutation, useQueryClient } from "react-query";
 import * as apiClient from "../api-client";
 import { useAppContext } from "../context/AppContext";
+import { Link } from "react-router-dom";
+
 const SignOutButton = () => {
   const queryClient = useQueryClient();
   const { showToast } = useAppContext();
@@ -21,7 +23,7 @@ const SignOutButton = () => {
   };
   return (
     <button onClick={handleClick} className="btn">
-      sign out
+      <Link to="/"></Link> sign out
     </button>
   );
 };

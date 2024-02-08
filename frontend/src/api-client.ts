@@ -119,3 +119,16 @@ export const fetchMyHotels = async (): Promise<HotelType[]> => {
 
   return response.json();
 };
+
+export const fetchMyHotelById = async (hotelId: string): Promise<HotelType> => {
+  const response = await fetch(
+    `http://127.0.0.1:7000/api/myHotels/${hotelId}`,
+    {
+      credentials: "include",
+    }
+  );
+  if (!response.ok) {
+    throw new Error("error fetching hotels ");
+  }
+  return response.json();
+};
