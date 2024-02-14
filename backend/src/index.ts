@@ -8,6 +8,7 @@ import cookieParser from "cookie-parser";
 import path from "path";
 import { v2 as cloudinary } from "cloudinary";
 import myHotelRoutes from "./routes/myHotels";
+import hotelSearchRoutes from "./routes/hotelSearch";
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
@@ -38,6 +39,7 @@ app.use(
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/myHotels", myHotelRoutes);
+app.use("/api/hotelSearch", hotelSearchRoutes);
 
 app.listen(7000, () => {
   console.log("server running at localhsot 7000");

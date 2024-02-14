@@ -1,0 +1,85 @@
+/* Base styling for your form */
+.SearchBarForm {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+  background-color: #f1f1f1;
+}
+
+/* Style for the icon container */
+.searchBarIcon {
+  display: flex;
+  align-items: center;
+}
+
+/* Style for the search input */
+.SearchBarInput {
+  margin-left: 5px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+/* Style for labels and number inputs */
+.SearchBarLabel {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+}
+
+/* Style for the date picker input */
+.DatePickerIcon {
+  display: block;
+}
+
+/* Style for buttons */
+.searchBarButton {
+  margin-top: 10px;
+}
+
+.searchButton,
+.clearButton {
+  padding: 10px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.searchButton {
+  background-color: #4caf50;
+  color: white;
+}
+
+.clearButton {
+  background-color: #f44336;
+  color: white;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .SearchBarForm {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .searchBarIcon,
+  .SearchBarLabel,
+  .searchButton,
+  .clearButton {
+    margin-top: 10px;
+  }
+
+  .SearchBarLabel {
+    margin-right: 0;
+  }
+
+  .searchButton,
+  .clearButton {
+    margin-right: 0;
+  }
+}

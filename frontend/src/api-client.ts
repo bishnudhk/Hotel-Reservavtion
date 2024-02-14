@@ -50,21 +50,27 @@ export const signIn = async (formData: SignInFormData) => {
 export const validateToken = async () => {
   // const token =
   // "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c";
-  const response = await fetch(
-    `http://127.0.0.1:7000/api/auth/validate-token`,
-    {
-      method: "POST",
-      credentials: "include",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }
-  );
+  try {
+    const response = await fetch(
+      `http://127.0.0.1:7000/api/auth/validate-token`,
+      {
+        method: "POST",
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
 
-  if (!response.ok) {
-    throw new Error("Token invalid");
+    if (!response.ok) {
+      throw new Error(`Token invalid : ${response.status}`);
+    }
+    return response.json();
+  } catch (error) {
+    // Handle any other errors that may occur during the fetch
+    console.error("Error during token validation:", error);
+    throw new Error("Failed to fetch");
   }
-  return response.json();
 };
 
 export const signOut = async () => {
@@ -131,4 +137,17 @@ export const fetchMyHotelById = async (hotelId: string): Promise<HotelType> => {
     throw new Error("error fetching hotels ");
   }
   return response.json();
+};
+
+export type SearchParams = {
+  destination?: string;
+  checkIn?: string;
+  checkOut?: string;
+  adultCount?: string;
+  childCount?: string;
+  page?: string;
+};
+
+export const searchHotels = async (SearchParams: SearchParams) => {
+  const queryParams = new URLSearchParams();
 };
