@@ -62,7 +62,7 @@ const ManageHotelForm = ({ onSave, isLoading, hotel }: Props) => {
       // console.log(formDataJson);
     });
 
-    onSave(formData);
+    await onSave(formData);
   });
 
   return (

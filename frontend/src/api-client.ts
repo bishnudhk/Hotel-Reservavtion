@@ -1,6 +1,6 @@
 import { RegisterFormData } from "./pages/Register";
 import { SignInFormData } from "./pages/SignIn";
-import { HotelType } from "../../backend/src/shared/types";
+import { HotelSearchResponse, HotelType } from "../../backend/src/shared/types";
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || " ";
 
@@ -148,6 +148,27 @@ export type SearchParams = {
   page?: string;
 };
 
-export const searchHotels = async (SearchParams: SearchParams) => {
+export const searchHotels = async (
+  SearchParams: SearchParams
+): Promise<HotelSearchResponse> => {
   const queryParams = new URLSearchParams();
+  queryParams.append("destination", SearchParams.destination || " ");
+  queryParams.append("checkIn", SearchParams.checkIn || " ");
+  queryParams.append("checkOut", SearchParams.checkOut || " ");
+  queryParams.append("adultCount", SearchParams.adultCount || " ");
+  queryParams.append("childCount", SearchParams.childCount || " ");
+  queryParams.append("page", SearchParams.page || " ");
+
+  console.log(SearchParams);
+  const response = await fetch(
+    `http://127.0.0.1:7000/api/hotels/search?${queryParams}`,
+    {
+      credentials: "include",
+    }
+  );
+
+  if (!response.ok) {
+    throw new Error("Error fetching hotel ");
+  }
+  return response.json();
 };

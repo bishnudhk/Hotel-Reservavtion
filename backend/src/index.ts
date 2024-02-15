@@ -39,7 +39,7 @@ app.use(
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/myHotels", myHotelRoutes);
-app.use("/api/hotelSearch", hotelSearchRoutes);
+app.use("/api/hotels", hotelSearchRoutes);
 
 app.listen(7000, () => {
   console.log("server running at localhsot 7000");
