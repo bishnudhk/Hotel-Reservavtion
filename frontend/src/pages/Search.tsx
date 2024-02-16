@@ -17,11 +17,9 @@ const Search = () => {
     childCount: search.childCount.toString(),
     page: page.toString(),
   };
-  // console.log(search);
   const { data: hotelData } = useQuery(["searchHotels", searchParams], () =>
     apiClient.searchHotels(searchParams)
   );
-  // console.log(hotelData);
 
   return (
     <div className="SearchPage">

@@ -8,6 +8,7 @@ const router = express.Router();
 
 router.get("/search", async (req: Request, res: Response) => {
   try {
+    console.log("calling search");
     const pageSize = 5;
     const pageNumber = parseInt(
       req.query.page ? req.query.page.toString() : "1"
@@ -26,9 +27,10 @@ router.get("/search", async (req: Request, res: Response) => {
         pages: Math.ceil(total / pageSize),
       },
     };
+    return res.status(201).json(response);
   } catch (error) {
     console.log(error);
-    res.status(500).json({ message: "Something went wrong " });
+    return res.status(500).json({ message: "Something went wrong " });
   }
 });
 

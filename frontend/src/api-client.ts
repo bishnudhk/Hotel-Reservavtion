@@ -159,7 +159,10 @@ export const searchHotels = async (
   queryParams.append("childCount", SearchParams.childCount || " ");
   queryParams.append("page", SearchParams.page || " ");
 
-  console.log(SearchParams);
+  // console.log(SearchParams);
+
+  console.log("calling");
+
   const response = await fetch(
     `http://127.0.0.1:7000/api/hotels/search?${queryParams}`,
     {
@@ -167,8 +170,17 @@ export const searchHotels = async (
     }
   );
 
+  console.log("12321312312312");
+
+  console.log("calling");
+  console.log(response, "**********************");
+
   if (!response.ok) {
     throw new Error("Error fetching hotel ");
   }
+
+  const responseData = await response.json();
+  console.log(responseData);
+  return responseData;
   return response.json();
 };

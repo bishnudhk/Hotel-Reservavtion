@@ -16,6 +16,7 @@ const verifyToken = (req: Request, res: Response, next: NextFunction) => {
   // console.log(req.cookies);
   // console.log(token);
   if (!token) {
+    console.log("0-0-0-0-0-0-");
     return res.status(401).json({ message: "unauthorized" });
   }
   // console.log(token);
