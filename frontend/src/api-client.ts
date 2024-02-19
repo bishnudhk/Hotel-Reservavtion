@@ -146,6 +146,11 @@ export type SearchParams = {
   adultCount?: string;
   childCount?: string;
   page?: string;
+  facilities?: string[];
+  types?: string[];
+  stars?: string[];
+  maxPrice?: string;
+  sortOption?: string;
 };
 
 export const searchHotels = async (
@@ -159,9 +164,19 @@ export const searchHotels = async (
   queryParams.append("childCount", SearchParams.childCount || " ");
   queryParams.append("page", SearchParams.page || " ");
 
+  queryParams.append("maxPrice", SearchParams.maxPrice || " ");
+  queryParams.append("sortOption", SearchParams.sortOption || " ");
+
+  SearchParams.facilities?.forEach((facility) =>
+    queryParams.append("facilities", facility)
+  );
+
+  SearchParams.types?.forEach((type) => queryParams.append("types", type));
+  SearchParams.stars?.forEach((star) => queryParams.append("stars", star));
+
   // console.log(SearchParams);
 
-  console.log("calling");
+  // console.log("calling");
 
   const response = await fetch(
     `http://127.0.0.1:7000/api/hotels/search?${queryParams}`,
@@ -170,17 +185,17 @@ export const searchHotels = async (
     }
   );
 
-  console.log("12321312312312");
+  // console.log("12321312312312");
 
-  console.log("calling");
-  console.log(response, "**********************");
+  // console.log("calling");
+  // console.log(response, "**********************");
 
   if (!response.ok) {
     throw new Error("Error fetching hotel ");
   }
 
   const responseData = await response.json();
-  console.log(responseData);
+  // console.log(responseData);
   return responseData;
   return response.json();
 };

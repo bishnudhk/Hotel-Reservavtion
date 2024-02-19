@@ -1,0 +1,54 @@
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* paginationLists */
+.paginationLists {
+  list-style: none;
+  display: flex;
+  gap: 5px;
+}
+
+/* Individual Pagination Item */
+.paginationLists li {
+  display: inline-block;
+}
+
+/* Pagination Button */
+.paginationLists button {
+  padding: 8px 12px;
+  /* background-color: #f8f8f8; */
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Active Pagination Button */
+.paginationLists li.bg-gray-200 button {
+  /* background-color: #4caf50; */
+  /* color: #fff; */
+}
+
+/* Hover Effect for Pagination Button */
+.paginationLists button:hover {
+  background-color: #ddd;
+}
+
+/* Disabled Pagination Button */
+.paginationLists button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Responsive Design (Optional) */
+@media screen and (max-width: 768px) {
+  .pagination {
+    flex-direction: column;
+    align-items: center;
+  }
+}

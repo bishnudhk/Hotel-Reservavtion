@@ -1,0 +1,52 @@
+/* SearchPage */
+.SearchPage {
+  padding: 20px;
+}
+
+/* searchPageDivide */
+.searchPageDivide {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* searchFilter */
+.searchFilter {
+  width: 30%;
+}
+
+.searchheading {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+/* searchList */
+.searchList {
+  width: 65%;
+}
+
+/* searchHeading */
+.searchHeading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.searchResult {
+  font-size: 1.2rem;
+}
+
+/* SearchResultCard */
+/* You may need to style SearchResultCard separately based on its structure and content */
+
+/* Responsive Design (Optional) */
+@media screen and (max-width: 768px) {
+  .searchPageDivide {
+    flex-direction: column;
+  }
+
+  .searchFilter,
+  .searchList {
+    width: 100%;
+  }
+}

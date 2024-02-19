@@ -1,0 +1,35 @@
+/* StarRatingFilter */
+.starRatingFilter {
+  margin-bottom: 20px;
+}
+
+/* starRatingHeading */
+/* .starRatingHeading {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+} */
+
+/* starRatingFilterLabel */
+.starRatingFilterLabel {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+/* Styling the checkbox */
+.starRatingFilterLabel input {
+  margin-right: 9px;
+}
+
+/* Responsive Design (Optional) */
+@media screen and (max-width: 768px) {
+  .starRatingFilterLabel {
+    display: flex;
+    align-items: center;
+  }
+
+  .starRatingFilterLabel span {
+    margin-left: 10px;
+  }
+}
