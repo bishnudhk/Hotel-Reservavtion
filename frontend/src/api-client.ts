@@ -199,3 +199,14 @@ export const searchHotels = async (
   return responseData;
   return response.json();
 };
+
+export const fetchHotelById = async (hotelId: string) => {
+  // console.log("fdsjalflaslfds");
+  // console.log(hotelId);
+  const response = await fetch(`http://127.0.0.1:7000/api/hotels/${hotelId}`);
+  if (!response.ok) {
+    throw new Error("Error fetching hotels");
+  }
+
+  return response.json();
+};
