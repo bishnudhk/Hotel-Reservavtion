@@ -8,6 +8,7 @@ import Pagination from "../components/Pagination.tsx";
 import StarRatingFilter from "../components/StarRatingFilter.tsx";
 import HotelTypeFilter from "../components/HotelTypeFilter.tsx";
 import FacilitiesFilter from "../components/FacilitiesFilter.tsx";
+import PriceFilter from "../components/PriceFilter.tsx";
 
 const Search = () => {
   const search = useSearchContext();
@@ -15,6 +16,8 @@ const Search = () => {
   const [selectedStars, setSelectedStars] = useState<string[]>([]);
   const [selectedHotelTypes, setSelectedHotelTypes] = useState<string[]>([]);
   const [selectedFacilities, setSelectedFacilities] = useState<string[]>([]);
+  const [selectedPrice, setSelectedprice] = useState<number | undefined>();
+  const [sortOption, setSortOption] = useState<string>("");
 
   const searchParams = {
     destination: search.destination,
@@ -26,6 +29,8 @@ const Search = () => {
     stars: selectedStars,
     types: selectedHotelTypes,
     facilities: selectedFacilities,
+    maxPrice: selectedPrice?.toString(),
+    sortOption,
   };
   const { data: hotelData } = useQuery(["searchHotels", searchParams], () =>
     apiClient.searchHotels(searchParams)
@@ -33,6 +38,7 @@ const Search = () => {
   // console.log(hotelData);
 
   const handleStarsChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    // console.log("start rating changed", selectedStars);
     const starRating = event.target.value;
 
     // const starRating = parseInt(event.target.value, 10); // Parse value to number
@@ -42,6 +48,7 @@ const Search = () => {
         ? [...prevStars, starRating]
         : prevStars.filter((star) => star !== starRating)
     );
+    // console.log(selectedStars);
   };
 
   const handleHotelTypeChange = (
@@ -88,6 +95,11 @@ const Search = () => {
             selectedFacilities={selectedFacilities}
             onChange={handleFacilityChange}
           />
+
+          <PriceFilter
+            selectedPrice={selectedPrice}
+            onChange={(value?: number) => setSelectedprice(value)}
+          />
         </div>
         <div className="searchList">
           <div className="searchHeading">
@@ -96,6 +108,20 @@ const Search = () => {
               {search.destination ? `in ${search.destination}` : ""}
             </span>
             {/* Todo sort options  */}
+            <select
+              value={sortOption}
+              onChange={(event) => setSortOption(event.target.value)}
+              className="p-2 border rounded-md"
+            >
+              <option value="">Sort BY</option>
+              <option value="starRating">Star Rating</option>
+              <option value="pricePerNightAsc">
+                Price Per Night (low to high)
+              </option>
+              <option value="pricePerNightDesc">
+                PricePerNight (high to low)
+              </option>
+            </select>
           </div>
           {hotelData?.data.map((hotel) => (
             <SearchResultCard hotel={hotel} key={hotel._id} />

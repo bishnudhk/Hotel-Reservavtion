@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles/starRatingFilter.css";
-import { hotelFacilities, hotelTypes } from "../config/hotel-options-config";
+import { hotelFacilities } from "../config/hotel-options-config";
 
 type Props = {
   selectedFacilities: string[];
@@ -17,7 +17,7 @@ const FacilitiesFilter = ({ selectedFacilities, onChange }: Props) => {
             type="checkbox"
             className="rounded"
             value={facility}
-            checked={selectedFacilities.includes(facility)}
+            checked={selectedFacilities.includes(facility.toString())}
             onChange={onChange}
           />
           <span>{facility}</span>

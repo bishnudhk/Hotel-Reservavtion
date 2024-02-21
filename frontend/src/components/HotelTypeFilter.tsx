@@ -17,7 +17,7 @@ const HotelTypeFilter = ({ selectedHotelTypes, onChange }: Props) => {
             type="checkbox"
             className="rounded"
             value={hotelType}
-            checked={selectedHotelTypes.includes(hotelType)}
+            checked={selectedHotelTypes.includes(hotelType.toString())}
             onChange={onChange}
           />
           <span>{hotelType}</span>

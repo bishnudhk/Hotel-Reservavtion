@@ -1,0 +1,50 @@
+/* PriceFilter */
+.priceFilter {
+  margin-bottom: 20px;
+}
+
+/* priceFilterHeading */
+.priceFilterHeading {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Styling the select dropdown */
+select {
+  /* width: 80%; */
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+/* Custom styling for the dropdown arrow */
+select::-ms-expand {
+  display: none;
+}
+
+/* Styling options within the dropdown */
+option {
+  /* font-size: 1rem; */
+}
+
+/* Hover effect for the dropdown */
+select:hover {
+  border-color: #666;
+}
+
+/* Focus effect for the dropdown */
+select:focus {
+  border-color: #4caf50; /* Your desired focus color */
+}
+
+/* Responsive Design (Optional) */
+@media screen and (max-width: 768px) {
+  .priceFilter {
+    width: 100%;
+  }
+}
