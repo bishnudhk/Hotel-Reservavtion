@@ -63,16 +63,16 @@ router.get(
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
     }
-    console.log(req.params, "888888");
+    // console.log(req.params, "888888");
     const id = req.params.id;
 
     try {
       // console.log("calling hotelid ");
-      console.log(id);
+      // console.log(id);
       const hotel = await Hotel.findById(id);
-      console.log("my id ffdsakfkdsa");
+      // console.log("my id ffdsakfkdsa");
 
-      console.log(hotel, "fadsfafdsfas");
+      // console.log(hotel, "fadsfafdsfas");
 
       return res.status(201).json(hotel);
     } catch (error) {

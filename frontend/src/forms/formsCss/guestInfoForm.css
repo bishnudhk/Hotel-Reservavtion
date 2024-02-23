@@ -1,0 +1,75 @@
+/* GuestInfoForm styles */
+.guestInfoForm {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 8px;
+  margin-right: -225px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.guestPricePerNight {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+form {
+  display: grid;
+  gap: 10px;
+}
+
+.DatePickericon {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.SearchBarLabel {
+  display: block;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.SearchBarInput {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.text-red-500 {
+  color: #ff0000;
+}
+
+.btn {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Responsive styles for small screens */
+@media (max-width: 600px) {
+  .guestInfoForm {
+    padding: 10px;
+  }
+
+  .guestPricePerNight {
+    font-size: 18px;
+  }
+
+  .DatePickericon,
+  .SearchBarInput {
+    font-size: 14px;
+  }
+
+  .btn {
+    font-size: 14px;
+  }
+}

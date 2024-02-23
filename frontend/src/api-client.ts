@@ -197,10 +197,10 @@ export const searchHotels = async (
   const responseData = await response.json();
   // console.log(responseData);
   return responseData;
-  return response.json();
+  // return response.json();
 };
 
-export const fetchHotelById = async (hotelId: string) => {
+export const fetchHotelById = async (hotelId: string): Promise<HotelType> => {
   // console.log("fdsjalflaslfds");
   // console.log(hotelId);
   const response = await fetch(`http://127.0.0.1:7000/api/hotels/${hotelId}`);
